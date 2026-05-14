@@ -1,0 +1,15 @@
+{
+  "status": "success",
+  "url": "https://www.thereadypatient.com/",
+  "path": "index",
+  "timestamp": "2026-05-11T17:52:18.466Z",
+  "title": "ReadyPatient",
+  "template": "homepage",
+  "blocks": [
+    "hero-patient",
+    "cards-resource",
+    "cards-resource",
+    "cards-resource",
+    "cards-resource"
+  ]
+}

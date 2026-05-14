@@ -1,0 +1,138 @@
+.hero-patient-container .hero-patient-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.hero-patient {
+  position: relative;
+  min-height: 400px;
+  display: flex;
+  align-items: stretch;
+}
+
+.hero-patient picture {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+}
+
+.hero-patient img {
+  object-fit: cover;
+  width: 500%;
+  height: 500%;
+  max-width: none;
+}
+
+@media (width >= 1024px) {
+  .hero-patient img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.hero-patient .hero-patient-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 32px;
+}
+
+.hero-patient h1 {
+  font-family: var(--display-font-family);
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1.05;
+  color: var(--text-color);
+  letter-spacing: 0.25px;
+  margin: 0 0 10px;
+}
+
+.hero-patient p {
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.78;
+  color: var(--text-color-muted);
+  letter-spacing: 0.25px;
+  margin: 0;
+}
+
+.hero-patient p strong {
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.hero-patient .hero-patient-cta {
+  margin-top: 16px;
+}
+
+.hero-patient .hero-patient-cta .button {
+  display: inline-block;
+  font-family: var(--body-font-family);
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  background-color: #00293b;
+  border: 0;
+  border-radius: 32px;
+  padding: 14px 24px;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.25px;
+  line-height: normal;
+  cursor: pointer;
+}
+
+.hero-patient .hero-patient-cta .button:hover {
+  background-color: #00344b;
+}
+
+.hero-patient.no-image h1,
+.hero-patient.no-image p {
+  color: var(--text-color);
+}
+
+.hero-patient.no-image p strong {
+  color: var(--text-color);
+}
+
+@media (width >= 768px) {
+  .hero-patient .hero-patient-content {
+    padding: 86px 43px 94px;
+  }
+
+  .hero-patient h1 {
+    font-size: 38px;
+  }
+
+  .hero-patient p {
+    font-size: 18px;
+    line-height: 1.78;
+  }
+
+  .hero-patient .hero-patient-cta .button {
+    font-size: 20px;
+  }
+}
+
+@media (width >= 1024px) {
+  .hero-patient .hero-patient-content {
+    padding: 86px 60.6% 94px 43px;
+  }
+}
+
+@media (width >= 1152px) {
+  .hero-patient .hero-patient-content {
+    padding: 86px 57.14% 94px 43px;
+  }
+}
+
+@media (width >= 1280px) {
+  .hero-patient .hero-patient-content {
+    padding: 86px 431px 94px 121px;
+  }
+}

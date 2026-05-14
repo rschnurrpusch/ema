@@ -1,0 +1,40 @@
+{
+  "variantName": "hero-patient",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-05-11T17:28:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.thereadypatient.com/",
+    "originPage": "ReadyPatient homepage - healthcare patient education",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "patient-hero",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "heading + paragraph + bold text + CTA",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "healthcare patient education pages",
+      "patient story feature banners",
+      "informational landing pages with background images",
+      "testimonial hero banners"
+    ],
+    "notSuitableFor": [
+      "product catalog pages",
+      "text-only hero sections without images",
+      "dark-themed pages with complex layouts"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-11T17:28:00.000Z"
+  }
+}

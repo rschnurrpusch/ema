@@ -22,7 +22,7 @@ function buildHeroBlock(main) {
   // eslint-disable-next-line no-bitwise
   if (h1 && picture && (h1.compareDocumentPosition(picture) & Node.DOCUMENT_POSITION_PRECEDING)) {
     // Check if h1 or picture is already inside a hero block
-    if (h1.closest('.hero') || picture.closest('.hero')) {
+    if (h1.closest('.hero, [class^="hero-"]') || picture.closest('.hero, [class^="hero-"]')) {
       return; // Don't create a duplicate hero block
     }
     const section = document.createElement('div');
@@ -113,6 +113,24 @@ function decorateButtons(main) {
   });
 }
 
+function decorateTestimonialSections(main) {
+  main.querySelectorAll('.section').forEach((section) => {
+    const h1 = section.querySelector('h1');
+    const h3 = section.querySelector('h3');
+    const h5 = section.querySelector('h5');
+    if (h1 && h3 && h5 && section.querySelector('a[href*="patient-story"]')) {
+      const headerSection = document.createElement('div');
+      headerSection.className = 'section';
+      const wrapper = document.createElement('div');
+      wrapper.className = 'default-content-wrapper';
+      wrapper.append(h3);
+      headerSection.append(wrapper);
+      section.before(headerSection);
+      section.classList.add('testimonial');
+    }
+  });
+}
+
 /**
  * Decorates the main element.
  * @param {Element} main The main element
@@ -122,6 +140,7 @@ export function decorateMain(main) {
   decorateIcons(main);
   buildAutoBlocks(main);
   decorateSections(main);
+  decorateTestimonialSections(main);
   decorateBlocks(main);
   decorateButtons(main);
 }

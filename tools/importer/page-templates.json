@@ -1,0 +1,64 @@
+{
+  "metadata": {
+    "projectType": "da"
+  },
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": ["https://www.thereadypatient.com/"],
+      "description": "Homepage template for The Ready Patient website",
+      "blocks": [
+        {
+          "name": "hero-patient",
+          "instances": [".hero-headline:first-of-type .hero-headlines", ".hero-headline:nth-of-type(2) .hero-headlines"]
+        },
+        {
+          "name": "cards-resource",
+          "instances": [".article-categories", ".resource-grid-cards"]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Hero Banner",
+          "selector": ".hero-headline:first-of-type",
+          "style": null,
+          "blocks": ["hero-patient"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "Article Categories",
+          "selector": [".title:has(#title-83bd028105)", ".article-categories"],
+          "style": null,
+          "blocks": ["cards-resource"],
+          "defaultContent": ["#title-83bd028105"]
+        },
+        {
+          "id": "section-3",
+          "name": "Patient Testimonial",
+          "selector": [".title:has(#title-b71b7dca44)", ".hero-headline:nth-of-type(2)"],
+          "style": null,
+          "blocks": ["hero-patient"],
+          "defaultContent": ["#title-b71b7dca44"]
+        },
+        {
+          "id": "section-4",
+          "name": "Resource Cards",
+          "selector": [".title:has(#title-27543d93ee)", ".resource-grid-cards"],
+          "style": null,
+          "blocks": ["cards-resource"],
+          "defaultContent": ["#title-27543d93ee"]
+        },
+        {
+          "id": "section-5",
+          "name": "Disclaimer",
+          "selector": ".cmp-text:has(h6)",
+          "style": null,
+          "blocks": [],
+          "defaultContent": ["#text-e30175cbcb h6"]
+        }
+      ]
+    }
+  ]
+}
