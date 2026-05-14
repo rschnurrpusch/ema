@@ -38,7 +38,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 32px;
+  width: 100%;
+  max-width: 1232px;
+  margin: 0 auto;
+  padding: 0 24px;
+  box-sizing: content-box;
 }
 
 .hero-patient h1 {
@@ -101,10 +105,6 @@
 }
 
 @media (width >= 768px) {
-  .hero-patient .hero-patient-content {
-    padding: 86px 43px 94px;
-  }
-
   .hero-patient h1 {
     font-size: 38px;
   }
@@ -121,18 +121,8 @@
 
 @media (width >= 1024px) {
   .hero-patient .hero-patient-content {
-    padding: 86px 60.6% 94px 43px;
-  }
-}
-
-@media (width >= 1152px) {
-  .hero-patient .hero-patient-content {
-    padding: 86px 57.14% 94px 43px;
-  }
-}
-
-@media (width >= 1280px) {
-  .hero-patient .hero-patient-content {
-    padding: 86px 431px 94px 121px;
+    width: 40%;
+    margin-left: 0;
+    margin-right: auto;
   }
 }

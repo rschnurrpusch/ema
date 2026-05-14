@@ -40,9 +40,9 @@ header nav[aria-expanded='true'] {
     grid-template:
       'tools tools' auto
       'brand sections' 1fr / auto 1fr;
-    gap: 0 32px;
-    max-width: 1264px;
-    padding: 0 32px;
+    gap: 0 24px;
+    max-width: 1280px;
+    padding: 0 24px;
     height: auto;
     min-height: 0;
     overflow: visible;
@@ -57,6 +57,10 @@ header nav p {
 header nav a:any-link {
   color: var(--text-color);
   text-decoration: none;
+}
+
+header nav a:visited {
+  color: var(--text-color);
 }
 
 /* hamburger */
@@ -209,6 +213,7 @@ header nav .nav-sections .default-content-wrapper > ul > li > ul {
   header nav .nav-sections .nav-drop {
     position: relative;
     cursor: pointer;
+    padding-bottom: 14px;
   }
 
   header nav .nav-sections ul {
@@ -235,7 +240,7 @@ header nav .nav-sections .default-content-wrapper > ul > li > ul {
     position: absolute;
     left: 0;
     width: 250px;
-    top: calc(100% + 14px);
+    top: 100%;
     padding: 0 15px 15px;
     background-color: #fff;
     white-space: initial;
@@ -247,6 +252,10 @@ header nav .nav-sections .default-content-wrapper > ul > li > ul {
     padding: 0;
   }
 
+  header nav .nav-sections .default-content-wrapper > ul > li:is(:hover, :focus-within) > p {
+    color: #53839f;
+  }
+
   header nav .nav-sections .default-content-wrapper > ul > li > ul > li a {
     font-size: 16px;
     font-weight: 400;
@@ -254,7 +263,13 @@ header nav .nav-sections .default-content-wrapper > ul > li > ul {
     line-height: 1.6;
   }
 
-  header nav .nav-sections .default-content-wrapper > ul > li > ul > li a:hover {
+  header nav .nav-sections .default-content-wrapper > ul > li > ul > li a:visited {
+    color: #000;
+  }
+
+  header nav .nav-sections .default-content-wrapper > ul > li > ul > li a:any-link:hover,
+  header nav .nav-sections .default-content-wrapper > ul > li > ul > li a:any-link:active,
+  header nav .nav-sections .default-content-wrapper > ul > li > ul > li a:any-link:focus {
     text-decoration: underline;
   }
 }
@@ -287,8 +302,19 @@ header nav .nav-tools a:any-link {
   display: inline-block;
 }
 
+header nav .nav-tools a:visited {
+  color: var(--text-color);
+}
+
 header nav .nav-tools a:last-of-type {
   font-weight: 700;
+}
+
+header nav .nav-tools a:any-link:hover,
+header nav .nav-tools a:any-link:active,
+header nav .nav-tools a:any-link:focus {
+  color: var(--text-color);
+  text-decoration: underline;
 }
 
 @media (width >= 900px) {

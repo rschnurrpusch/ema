@@ -8,7 +8,7 @@ footer {
 
 footer .footer > div {
   margin: auto;
-  max-width: 1200px;
+  max-width: 1232px;
   padding: 40px 24px 24px;
 }
 
@@ -87,10 +87,6 @@ footer .footer .section:last-child p:last-child {
 }
 
 @media (width >= 900px) {
-  footer .footer > div {
-    padding: 40px 32px 24px;
-  }
-
   footer .footer .columns > div {
     flex-direction: row;
     gap: 40px;

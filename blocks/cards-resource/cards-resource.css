@@ -6,7 +6,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 25px;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 /* base card: background-image, rounded, shadow */
@@ -46,6 +46,10 @@
 .cards-resource .cards-resource-card-body a:any-link {
   color: var(--text-color);
   text-decoration: none;
+}
+
+.cards-resource .cards-resource-card-body a:any-link:hover {
+  text-decoration: underline;
 }
 
 /* rich card overrides (h4 + description + CTA) */
@@ -101,8 +105,9 @@
   line-height: normal;
 }
 
-.cards-resource .cards-resource-card-body h4 ~ p:last-child a:hover {
+.cards-resource .cards-resource-card-body h4 ~ p:last-child a:any-link:hover {
   background-color: var(--text-color);
+  text-decoration: none;
 }
 
 /* dark variant (inverted colorway) */
@@ -120,8 +125,9 @@
   background-color: #f8f7f1;
 }
 
-.cards-resource > ul > li.cards-resource-dark .cards-resource-card-body h4 ~ p:last-child a:hover {
+.cards-resource > ul > li.cards-resource-dark .cards-resource-card-body h4 ~ p:last-child a:any-link:hover {
   background-color: #fff;
+  text-decoration: none;
 }
 
 /* rich cards: 3-column bespoke grid at desktop */
