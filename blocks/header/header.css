@@ -420,13 +420,18 @@ header nav .nav-search {
   header nav .nav-search-btn {
     background: none;
     border: 0;
-    padding: 0 8px;
+    padding: 0;
     cursor: pointer;
     color: var(--text-color);
     display: flex;
     align-items: center;
     position: relative;
     z-index: 1;
+    transition: transform 0.3s ease;
+  }
+
+  header nav .nav-search.nav-search-open .nav-search-btn {
+    transform: translateX(-8px);
   }
 
   header nav .nav-search-form {
