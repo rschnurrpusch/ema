@@ -6,7 +6,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 25px;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 /* base card: background-image, rounded, shadow */
