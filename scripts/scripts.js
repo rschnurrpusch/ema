@@ -31,6 +31,15 @@ function buildHeroBlock(main) {
   }
 }
 
+function buildBreadcrumb(main) {
+  if (main !== document.querySelector('main')) return;
+  const path = window.location.pathname.replace(/\/$/, '');
+  if (!path || path === '' || path === '/index') return;
+  const section = document.createElement('div');
+  section.append(buildBlock('breadcrumb', { elems: [] }));
+  main.prepend(section);
+}
+
 /**
  * load fonts.css and set a session storage flag
  */
@@ -68,6 +77,7 @@ function buildAutoBlocks(main) {
     }
 
     buildHeroBlock(main);
+    buildBreadcrumb(main);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
