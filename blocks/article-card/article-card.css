@@ -1,0 +1,146 @@
+/* Grid layout */
+.article-card .article-card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: flex-start;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+/* Individual card */
+.article-card .article-card-item {
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f7f1;
+  border-radius: 15px;
+  padding: 15px;
+  gap: 20px;
+  text-decoration: none;
+  width: 100%;
+  box-sizing: border-box;
+  transition: box-shadow 0.3s;
+}
+
+/* Article title */
+.article-card .article-card-title {
+  font-family: var(--display-font-family);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-color);
+  line-height: 26px;
+  margin: 0;
+}
+
+.article-card .article-card-item:is(:hover, :active, :focus) {
+  box-shadow: rgb(220 220 220) 0 5px 10px 0;
+}
+
+.article-card .article-card-item:is(:hover, :active, :focus) .article-card-title {
+  text-decoration: underline;
+}
+
+/* Card image */
+.article-card .article-card-image {
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+}
+
+/* Card content area */
+.article-card .article-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 0 10px;
+}
+
+/* Theme tag pill */
+.article-card .article-card-tag {
+  display: inline-block;
+  padding: 6px 8px;
+  border-radius: 100px;
+  font-family: var(--body-font-family);
+  font-size: 10px;
+  font-weight: 400;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  line-height: 16px;
+  background-color: rgb(83 142 159);
+}
+
+/* Tag color variants */
+.article-card .tagcolor-surgery {
+  background-color: rgb(23 140 202);
+}
+
+.article-card .tagcolor-recovery {
+  background-color: rgb(60 164 128);
+}
+
+.article-card .tagcolor-lifestyle {
+  background-color: rgb(83 142 159);
+}
+
+.article-card .tagcolor-financial {
+  background-color: rgb(115 171 0);
+}
+
+.article-card .tagcolor-diagnosis-and-options {
+  background-color: rgb(86 124 124);
+}
+
+.article-card .tagcolor-healthy-living {
+  background-color: rgb(18 82 153);
+}
+
+.article-card .tagcolor-physical {
+  background-color: rgb(85 57 88);
+}
+
+.article-card .tagcolor-well-being {
+  background-color: rgb(83 142 159);
+}
+
+.article-card .tagcolor-patient-stories {
+  background-color: rgb(0 41 59);
+}
+
+.article-card .tagcolor-technology {
+  background-color: rgb(1 172 182);
+}
+
+.article-card .tagcolor-safety {
+  background-color: rgb(85 57 88);
+}
+
+/* Tablet — 2 columns */
+@media (width >= 768px) {
+  .article-card .article-card-item {
+    width: calc(50% - 13px);
+  }
+
+  .article-card .article-card-image {
+    height: 250px;
+  }
+}
+
+/* Desktop — 3 columns, larger cards */
+@media (width >= 1024px) {
+  .article-card .article-card-item {
+    width: 400px;
+  }
+
+  .article-card .article-card-image {
+    height: 280px;
+  }
+
+  .article-card .article-card-title {
+    font-size: 24px;
+    line-height: 30px;
+  }
+}
