@@ -96,9 +96,9 @@
   height: 100%;
   pointer-events: none;
   font-family: var(--body-font-family);
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 1px;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: normal;
   text-transform: uppercase;
   color: #7d7d7d;
 }
@@ -205,10 +205,6 @@
 @media (width >= 900px) {
   .journey-selector .journey-selector-filters {
     flex-wrap: nowrap;
-  }
-
-  .journey-selector .journey-selector-label {
-    font-size: 14px;
   }
 
   .journey-selector .journey-selector-count {
