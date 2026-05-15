@@ -410,11 +410,17 @@ header nav .nav-search {
 @media (width >= 900px) {
   header nav .nav-search {
     display: flex;
-    flex-direction: row-reverse;
     align-items: center;
+    justify-content: flex-end;
     grid-area: search;
     position: relative;
     margin-left: 8px;
+    width: 24px;
+    transition: width 0.5s ease;
+  }
+
+  header nav .nav-search.nav-search-open {
+    width: 200px;
   }
 
   header nav .nav-search-btn {
@@ -425,30 +431,23 @@ header nav .nav-search {
     color: var(--text-color);
     display: flex;
     align-items: center;
-    position: relative;
+    position: absolute;
+    right: 0;
     z-index: 1;
-    transition: transform 0.3s ease;
+    transition: right 0.3s ease;
   }
 
   header nav .nav-search.nav-search-open .nav-search-btn {
-    transform: translateX(-8px);
+    right: 8px;
   }
 
   header nav .nav-search-form {
-    overflow: hidden;
-    width: 0;
-    transition: width 0.5s ease, margin-right 0.5s ease;
-    margin-right: 0;
+    width: 100%;
     align-self: center;
   }
 
-  header nav .nav-search.nav-search-open .nav-search-form {
-    width: 200px;
-    margin-right: -40px;
-  }
-
   header nav .nav-search-form input {
-    width: 200px;
+    width: 100%;
     padding: 12px 40px 12px 12px;
     border: 0;
     border-radius: 0;
@@ -459,6 +458,12 @@ header nav .nav-search {
     color: var(--text-color);
     outline: none;
     box-sizing: border-box;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  header nav .nav-search.nav-search-open .nav-search-form input {
+    opacity: 1;
   }
 
   header nav .nav-search-form input::placeholder {
