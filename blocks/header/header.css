@@ -414,6 +414,7 @@ header nav .nav-search {
     align-items: center;
     grid-area: search;
     position: relative;
+    margin-left: 8px;
   }
 
   header nav .nav-search-btn {
