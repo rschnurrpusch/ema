@@ -105,9 +105,10 @@ footer {
 }
 
 header {
-  height: var(--nav-height);
   overflow: visible;
   z-index: 2;
+  position: sticky;
+  top: -40px;
 }
 
 header .header,

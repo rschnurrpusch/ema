@@ -171,8 +171,46 @@ export default async function decorate(block) {
   toggleMenu(nav, navSections, isDesktop.matches);
   isDesktop.addEventListener('change', () => toggleMenu(nav, navSections, isDesktop.matches));
 
+  // search
+  const search = document.createElement('div');
+  search.classList.add('nav-search');
+  search.innerHTML = `<button type="button" aria-label="Search" class="nav-search-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    </button>
+    <form class="nav-search-form" action="/search" method="get">
+      <input type="search" name="q" placeholder="Search" aria-label="Search">
+    </form>`;
+  const searchInput = search.querySelector('input');
+  const openSearch = () => search.classList.add('nav-search-open');
+  const closeSearch = () => search.classList.remove('nav-search-open');
+
+  search.addEventListener('mouseenter', () => {
+    if (isDesktop.matches) openSearch();
+  });
+  search.addEventListener('mouseleave', () => {
+    if (isDesktop.matches && document.activeElement !== searchInput) closeSearch();
+  });
+  searchInput.addEventListener('blur', () => closeSearch());
+  nav.querySelector('.nav-sections').after(search);
+
   const navWrapper = document.createElement('div');
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
   block.append(navWrapper);
+
+  // sticky shadow on scroll
+  const header = block.closest('header');
+  if (header) {
+    const sentinel = document.createElement('div');
+    sentinel.className = 'header-sentinel';
+    sentinel.style.height = '1px';
+    sentinel.style.marginBottom = '-1px';
+    header.before(sentinel);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        header.classList.toggle('header-scrolled', !entry.isIntersecting);
+      },
+    );
+    observer.observe(sentinel);
+  }
 }
