@@ -7,7 +7,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 8px;
+  margin-bottom: 48px;
 }
 
 /* Individual pill */
@@ -17,9 +17,60 @@
   align-items: center;
   min-height: 62px;
   min-width: 180px;
-  border-radius: 3px;
+  border-radius: 100px;
   cursor: pointer;
   flex: 1;
+}
+
+/* Dashed line beneath pill */
+.journey-selector .journey-selector-pill::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 0;
+  height: 45px;
+  border-left: 3px dashed #abbdbd;
+  z-index: 1;
+}
+
+/* Round dot at end of dashed line — overlaps the progress bar */
+.journey-selector .journey-selector-pill::before {
+  content: "";
+  position: absolute;
+  top: calc(100% + 45.5px);
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  border-radius: 100px;
+  background-color: #abbdbd;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+/* Per-tag colors for line and dot */
+.journey-selector .journey-selector-tag-2::after {
+  border-left-color: #8bc5e4;
+}
+
+.journey-selector .journey-selector-tag-2::before {
+  background-color: #8bc5e4;
+}
+
+.journey-selector .journey-selector-tag-3::after {
+  border-left-color: #9dd1bf;
+}
+
+.journey-selector .journey-selector-tag-3::before {
+  background-color: #9dd1bf;
+}
+
+.journey-selector .journey-selector-tag-4::after {
+  border-left-color: #88a8cc;
+}
+
+.journey-selector .journey-selector-tag-4::before {
+  background-color: #88a8cc;
 }
 
 /* Hidden native checkbox */
