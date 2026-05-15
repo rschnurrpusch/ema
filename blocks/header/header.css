@@ -432,13 +432,14 @@ header nav .nav-search {
   header nav .nav-search-form {
     overflow: hidden;
     width: 0;
-    transition: width 0.5s ease;
-    margin-right: -40px;
+    transition: width 0.5s ease, margin-right 0.5s ease;
+    margin-right: 0;
     align-self: center;
   }
 
   header nav .nav-search.nav-search-open .nav-search-form {
     width: 200px;
+    margin-right: -40px;
   }
 
   header nav .nav-search-form input {
