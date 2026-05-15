@@ -1,39 +1,173 @@
-.journey-selector-filters {
+.journey-selector {
+  padding: 0;
+}
+
+/* Filters row */
+.journey-selector .journey-selector-filters {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
-  margin-bottom: 32px;
+  gap: 8px;
+  margin-bottom: 8px;
 }
 
-.journey-selector-option {
+/* Individual pill */
+.journey-selector .journey-selector-pill {
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 12px 20px;
-  background-color: #f8f7f1;
-  border-radius: 8px;
+  min-height: 62px;
+  min-width: 180px;
+  border-radius: 3px;
   cursor: pointer;
+  flex: 1;
+}
+
+/* Hidden native checkbox */
+.journey-selector .journey-selector-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  margin: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* Label layout */
+.journey-selector .journey-selector-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 8px;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #7d7d7d;
+}
+
+/* Number circle */
+.journey-selector .journey-selector-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 38px;
+  height: 38px;
+  background-color: #fff;
+  border-radius: 100px;
+  color: #7d7d7d;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* Label text */
+.journey-selector .journey-selector-text {
+  text-align: left;
+  overflow-wrap: break-word;
+}
+
+/* Pill color backgrounds — unchecked states */
+.journey-selector .journey-selector-tag-1 {
+  background: linear-gradient(0deg, #eef2f2, #eef2f2), linear-gradient(0deg, #abbdbd, #abbdbd);
+}
+
+.journey-selector .journey-selector-tag-2 {
+  background: linear-gradient(0deg, #e8f3fa, #e8f3fa), linear-gradient(0deg, #8bc5e4, #8bc5e4);
+}
+
+.journey-selector .journey-selector-tag-3 {
+  background: linear-gradient(0deg, #ebf6f2, #ebf6f2), linear-gradient(0deg, #9dd1bf, #9dd1bf);
+}
+
+.journey-selector .journey-selector-tag-4 {
+  background: linear-gradient(0deg, #e7eef5, #e7eef5), linear-gradient(0deg, #88a8cc, #88a8cc);
+}
+
+/* Checked state — solid color */
+.journey-selector .journey-selector-tag-1.is-checked {
+  background: rgb(86 124 124);
+}
+
+.journey-selector .journey-selector-tag-2.is-checked {
+  background: rgb(23 140 202);
+}
+
+.journey-selector .journey-selector-tag-3.is-checked {
+  background: rgb(60 164 128);
+}
+
+.journey-selector .journey-selector-tag-4.is-checked {
+  background: rgb(18 82 153);
+}
+
+.journey-selector .journey-selector-pill.is-checked .journey-selector-label {
+  color: #fff;
+}
+
+.journey-selector .journey-selector-tag-1.is-checked .journey-selector-number {
+  color: rgb(86 124 124);
+}
+
+.journey-selector .journey-selector-tag-2.is-checked .journey-selector-number {
+  color: rgb(23 140 202);
+}
+
+.journey-selector .journey-selector-tag-3.is-checked .journey-selector-number {
+  color: rgb(60 164 128);
+}
+
+.journey-selector .journey-selector-tag-4.is-checked .journey-selector-number {
+  color: rgb(18 82 153);
+}
+
+/* Progress bar */
+.journey-selector .journey-selector-bar {
+  background: linear-gradient(90deg, #f8f7f1 0, #eeedeb 100%);
+  border-radius: 14px;
+  height: 10px;
+  width: 100%;
+}
+
+/* Card count */
+.journey-selector .journey-selector-count {
+  color: #727373;
   font-family: var(--body-font-family);
   font-size: 16px;
-  font-weight: 600;
-  color: var(--text-color);
-  transition: background-color 0.2s ease;
+  padding: 19px 0;
 }
 
-.journey-selector-option:hover {
-  background-color: #e8e7e2;
-}
-
-.journey-selector-option input {
-  accent-color: var(--text-color);
-  width: 18px;
-  height: 18px;
-  cursor: pointer;
-}
-
-.journey-selector-results {
+/* Results area */
+.journey-selector .journey-selector-results {
   font-family: var(--body-font-family);
   font-size: 16px;
-  color: var(--text-color-muted);
-  padding: 24px 0;
+  color: #8c8c8c;
+  padding: 0;
+}
+
+/* Desktop layout */
+@media (width >= 900px) {
+  .journey-selector .journey-selector-filters {
+    flex-wrap: nowrap;
+  }
+
+  .journey-selector .journey-selector-label {
+    font-size: 14px;
+  }
+
+  .journey-selector .journey-selector-count {
+    font-size: 16px;
+    max-width: 1250px;
+    margin: 0 auto;
+  }
+
+  .journey-selector .journey-selector-results {
+    max-width: 1250px;
+    margin: 0 auto;
+  }
 }
