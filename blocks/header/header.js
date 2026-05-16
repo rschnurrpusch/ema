@@ -132,6 +132,13 @@ export default async function decorate(block) {
     brandLink.closest('.button-container').className = '';
   }
 
+  const brandImg = navBrand.querySelector('img');
+  if (brandImg) {
+    brandImg.addEventListener('error', () => {
+      brandImg.src = '/icons/logo.svg';
+    });
+  }
+
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {
     navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
