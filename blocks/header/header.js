@@ -137,6 +137,14 @@ export default async function decorate(block) {
     brandImg.addEventListener('error', () => {
       brandImg.src = '/icons/logo.svg';
     });
+    const brandLinkEl = navBrand.querySelector('a');
+    const brandPicture = navBrand.querySelector('picture');
+    if (brandLinkEl && brandPicture && !brandLinkEl.contains(brandPicture)) {
+      brandLinkEl.textContent = '';
+      brandLinkEl.append(brandPicture);
+      const emptyP = navBrand.querySelector('p:empty');
+      if (emptyP) emptyP.remove();
+    }
   }
 
   const navSections = nav.querySelector('.nav-sections');
