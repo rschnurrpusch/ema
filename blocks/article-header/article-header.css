@@ -1,0 +1,101 @@
+.article-header {
+  padding: 24px 0;
+}
+
+.article-header .article-header-content {
+  max-width: 800px;
+}
+
+.article-header .article-header-tag {
+  display: inline-block;
+  padding: 6px 8px;
+  border-radius: 100px;
+  font-family: var(--body-font-family);
+  font-size: 10px;
+  font-weight: 400;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  line-height: 16px;
+  background-color: rgb(83 142 159);
+  margin-bottom: 16px;
+}
+
+.article-header .tagcolor-surgery {
+  background-color: rgb(23 140 202);
+}
+
+.article-header .tagcolor-recovery {
+  background-color: rgb(60 164 128);
+}
+
+.article-header .tagcolor-lifestyle {
+  background-color: rgb(83 142 159);
+}
+
+.article-header .tagcolor-physical {
+  background-color: rgb(85 57 88);
+}
+
+.article-header .tagcolor-well-being {
+  background-color: rgb(83 142 159);
+}
+
+.article-header .tagcolor-diagnosis-and-options {
+  background-color: rgb(86 124 124);
+}
+
+.article-header .tagcolor-healthy-living {
+  background-color: rgb(18 82 153);
+}
+
+.article-header h1 {
+  font-family: var(--display-font-family);
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--text-color);
+  line-height: 1.2;
+  margin: 0 0 16px;
+}
+
+.article-header .article-header-description {
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  color: #8c8c8c;
+  line-height: 1.5;
+  margin: 0 0 16px;
+}
+
+.article-header .article-header-meta {
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  color: #8c8c8c;
+  margin: 0 0 16px;
+}
+
+.article-header .article-header-author {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 16px;
+  border-top: 1px solid #e8e7e2;
+}
+
+.article-header .article-header-author-name {
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.article-header .article-header-author-role {
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  color: #8c8c8c;
+}
+
+@media (width >= 900px) {
+  .article-header h1 {
+    font-size: 40px;
+  }
+}
