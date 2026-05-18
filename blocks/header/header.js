@@ -134,9 +134,7 @@ export default async function decorate(block) {
 
   const brandImg = navBrand.querySelector('img');
   if (brandImg) {
-    brandImg.addEventListener('error', () => {
-      brandImg.src = '/icons/logo.svg';
-    });
+    brandImg.src = '/icons/logo.svg';
     const brandLinkEl = navBrand.querySelector('a');
     const brandPicture = navBrand.querySelector('picture');
     if (brandLinkEl && brandPicture && !brandLinkEl.contains(brandPicture)) {
