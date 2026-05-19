@@ -71,6 +71,17 @@ export default function decorate(block) {
   block.textContent = '';
   const content = document.createElement('div');
   content.className = 'article-header-content';
+
+  // Pull breadcrumb into the article header text
+  const breadcrumbSection = document.querySelector('.breadcrumb-container');
+  if (breadcrumbSection) {
+    const breadcrumbBlock = breadcrumbSection.querySelector('.breadcrumb');
+    if (breadcrumbBlock) {
+      textWrapper.prepend(breadcrumbBlock);
+    }
+    breadcrumbSection.remove();
+  }
+
   content.append(textWrapper);
   if (imageWrapper) content.append(imageWrapper);
   block.append(content);

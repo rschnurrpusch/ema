@@ -349,6 +349,8 @@ main:has(.article-header-container) {
 
 main:has(.article-header-container) > .section {
   background-color: #fff;
+  margin-bottom: 16px;
+  padding: 24px 0;
 }
 
 main > .section > div {
@@ -359,6 +361,10 @@ main > .section > div {
 
 main > .section:first-of-type {
   padding-top: 0;
+}
+
+main:has(.article-header-container) > .section:last-of-type {
+  margin-bottom: 0;
 }
 
 /* section headings */

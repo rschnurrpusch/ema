@@ -48,3 +48,8 @@
   color: rgb(23 140 202);
   text-decoration: underline;
 }
+
+/* When breadcrumb is inside article-header */
+.article-header-text .breadcrumb {
+  padding: 0 0 16px;
+}
