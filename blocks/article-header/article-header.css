@@ -86,9 +86,8 @@
 .article-header .article-header-author {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding-top: 16px;
-  border-top: 1px solid #e8e7e2;
+  gap: 12px;
+  padding: 16px 0 0 24px;
 }
 
 .article-header .article-header-author-name {
@@ -96,15 +95,31 @@
   font-size: 14px;
   font-weight: 400;
   color: #8c8c8c;
+  display: block;
 }
 
 .article-header .article-header-author-role {
   font-family: var(--body-font-family);
-  font-size: 14px;
-  color: #8c8c8c;
+  font-size: 10px;
+  color: var(--text-color);
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 0.5px;
+  display: block;
+}
+
+.article-header .article-header-author-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #e8e7e2;
+  flex-shrink: 0;
+}
+
+.article-header .article-header-author-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 /* Hero image — circular crop */

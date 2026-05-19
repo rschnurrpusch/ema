@@ -37,19 +37,27 @@ export default function decorate(block) {
     if (authorCol) {
       const authorDiv = document.createElement('div');
       authorDiv.className = 'article-header-author';
+
+      const authorImg = document.createElement('div');
+      authorImg.className = 'article-header-author-img';
+      authorDiv.append(authorImg);
+
+      const authorText = document.createElement('div');
+      authorText.className = 'article-header-author-text';
       const paras = authorCol.querySelectorAll('p');
       if (paras.length >= 1) {
         const name = document.createElement('span');
         name.className = 'article-header-author-name';
         name.textContent = paras[0].textContent.trim();
-        authorDiv.append(name);
+        authorText.append(name);
       }
       if (paras.length >= 2) {
         const role = document.createElement('span');
         role.className = 'article-header-author-role';
         role.textContent = paras[1].textContent.trim();
-        authorDiv.append(role);
+        authorText.append(role);
       }
+      authorDiv.append(authorText);
       textWrapper.append(authorDiv);
     }
   }
