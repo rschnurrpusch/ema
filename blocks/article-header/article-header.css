@@ -12,7 +12,8 @@
 .article-header .article-header-text {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 24px 24px 24px 0;
 }
 
 .article-header .article-header-tag {
@@ -87,7 +88,13 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 16px 0 0 24px;
+  background: linear-gradient(90deg, #f8f7f1 0, rgb(248 247 241 / 60%) 100%);
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
+  padding: 20px 0 20px 40px;
+  width: calc(100% - 20px);
+  align-self: flex-end;
+  margin-top: 16px;
 }
 
 .article-header .article-header-author-name {
