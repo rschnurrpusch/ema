@@ -6,27 +6,27 @@ export default function decorate(block) {
   if (!mainCol) return;
 
   const elements = [...mainCol.children];
-  const wrapper = document.createElement('div');
-  wrapper.className = 'article-header-content';
+  const textWrapper = document.createElement('div');
+  textWrapper.className = 'article-header-text';
 
   elements.forEach((el) => {
-    if (el.tagName === 'P' && !el.querySelector('a') && !wrapper.querySelector('.article-header-tag')) {
+    if (el.tagName === 'P' && !el.querySelector('a') && !textWrapper.querySelector('.article-header-tag')) {
       const tag = document.createElement('span');
       tag.className = `article-header-tag tagcolor-${el.textContent.trim().toLowerCase().replace(/\s+/g, '-')}`;
       tag.textContent = el.textContent.trim();
-      wrapper.append(tag);
+      textWrapper.append(tag);
     } else if (el.tagName === 'H1') {
-      wrapper.append(el);
-    } else if (el.tagName === 'P' && wrapper.querySelector('h1') && !wrapper.querySelector('.article-header-meta')) {
+      textWrapper.append(el);
+    } else if (el.tagName === 'P' && textWrapper.querySelector('h1') && !textWrapper.querySelector('.article-header-meta')) {
       const text = el.textContent.trim();
       if (text.includes('|') || text.match(/\d{4}/)) {
         const meta = document.createElement('p');
         meta.className = 'article-header-meta';
         meta.textContent = text;
-        wrapper.append(meta);
+        textWrapper.append(meta);
       } else {
         el.className = 'article-header-description';
-        wrapper.append(el);
+        textWrapper.append(el);
       }
     }
   });
@@ -50,10 +50,28 @@ export default function decorate(block) {
         role.textContent = paras[1].textContent.trim();
         authorDiv.append(role);
       }
-      wrapper.append(authorDiv);
+      textWrapper.append(authorDiv);
+    }
+  }
+
+  // Image from third row (if present)
+  let imageWrapper = null;
+  if (rows.length > 2) {
+    const imgCol = rows[2].querySelector(':scope > div');
+    if (imgCol) {
+      const picture = imgCol.querySelector('picture');
+      if (picture) {
+        imageWrapper = document.createElement('div');
+        imageWrapper.className = 'article-header-image';
+        imageWrapper.append(picture);
+      }
     }
   }
 
   block.textContent = '';
-  block.append(wrapper);
+  const content = document.createElement('div');
+  content.className = 'article-header-content';
+  content.append(textWrapper);
+  if (imageWrapper) content.append(imageWrapper);
+  block.append(content);
 }
