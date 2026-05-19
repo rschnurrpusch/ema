@@ -88,12 +88,16 @@ main > .section:last-of-type {
 }
 
 /* Article body styles — applies to sections following article-header */
-main .article-header-container ~ .section > .default-content-wrapper {
+main .article-header-container ~ .section:not(.cards-resource-container) > .default-content-wrapper {
   max-width: 680px;
   margin: 0 auto;
 }
 
-.article-header-container ~ .section > .default-content-wrapper h2 {
+main .article-header-container ~ .section > .default-content-wrapper:has(.cards-resource) {
+  max-width: none;
+}
+
+.article-header-container ~ .section:not(.cards-resource-container) > .default-content-wrapper h2 {
   font-family: var(--display-font-family);
   font-size: 32px;
   font-weight: 400;
@@ -102,7 +106,7 @@ main .article-header-container ~ .section > .default-content-wrapper {
   margin: 40px 0 20px;
 }
 
-.article-header-container ~ .section > .default-content-wrapper p {
+.article-header-container ~ .section:not(.cards-resource-container) > .default-content-wrapper p {
   font-family: var(--body-font-family);
   font-size: 18px;
   line-height: 1.5;
@@ -110,7 +114,7 @@ main .article-header-container ~ .section > .default-content-wrapper {
   margin: 0 0 20px;
 }
 
-.article-header-container ~ .section > .default-content-wrapper a:any-link {
+.article-header-container ~ .section:not(.cards-resource-container) > .default-content-wrapper a:any-link {
   display: inline-block;
   font-family: var(--body-font-family);
   font-size: 12px;
@@ -124,16 +128,16 @@ main .article-header-container ~ .section > .default-content-wrapper {
   margin: 16px 0;
 }
 
-.article-header-container ~ .section > .default-content-wrapper a:hover {
+.article-header-container ~ .section:not(.cards-resource-container) > .default-content-wrapper a:hover {
   background-color: var(--text-color);
 }
 
 @media (width >= 900px) {
-  .article-header-container ~ .section > .default-content-wrapper h2 {
+  .article-header-container ~ .section:not(.cards-resource-container) > .default-content-wrapper h2 {
     font-size: 40px;
   }
 
-  .article-header-container ~ .section > .default-content-wrapper p {
+  .article-header-container ~ .section:not(.cards-resource-container) > .default-content-wrapper p {
     font-size: 20px;
     line-height: 1.25;
   }
