@@ -97,13 +97,22 @@ main .article-header-container ~ .section > .default-content-wrapper:has(.cards-
   max-width: none;
 }
 
-.article-header-container ~ .section:not(.cards-resource-container) > .default-content-wrapper h2 {
+main .article-header-container ~ .section > .default-content-wrapper:has(.cards-resource) h3 {
   font-family: var(--display-font-family);
-  font-size: 32px;
+  font-size: 40px;
   font-weight: 400;
   color: var(--text-color);
-  line-height: 1.1;
-  margin: 40px 0 20px;
+  text-align: center;
+  margin: 0 0 24px;
+}
+
+.article-header-container ~ .section:not(.cards-resource-container) > .default-content-wrapper h2 {
+  font-family: var(--display-font-family);
+  font-size: 40px;
+  font-weight: 400;
+  color: var(--text-color);
+  line-height: 45px;
+  margin: 0 0 24px;
 }
 
 .article-header-container ~ .section:not(.cards-resource-container) > .default-content-wrapper p {
@@ -133,10 +142,6 @@ main .article-header-container ~ .section > .default-content-wrapper:has(.cards-
 }
 
 @media (width >= 900px) {
-  .article-header-container ~ .section:not(.cards-resource-container) > .default-content-wrapper h2 {
-    font-size: 40px;
-  }
-
   .article-header-container ~ .section:not(.cards-resource-container) > .default-content-wrapper p {
     font-size: 20px;
     line-height: 1.25;
