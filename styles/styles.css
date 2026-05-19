@@ -335,6 +335,19 @@ main img {
 /* sections */
 main > .section {
   padding: 24px 0;
+}
+
+/* Default: white bg on main for most pages */
+main {
+  background-color: #fff;
+}
+
+/* Article detail pages: transparent main, white on individual sections */
+main:has(.article-header-container) {
+  background-color: transparent;
+}
+
+main:has(.article-header-container) > .section {
   background-color: #fff;
 }
 
