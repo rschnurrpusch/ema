@@ -6,7 +6,6 @@ export default function decorate(block) {
     const cols = [...row.children];
     if (cols.length < 2) return;
 
-    const picture = cols[0].querySelector('picture');
     const textCol = cols[1];
     const link = textCol.querySelector('a');
     const tag = textCol.querySelector('p:first-child')?.textContent?.trim();
@@ -20,11 +19,9 @@ export default function decorate(block) {
 
     const imageDiv = document.createElement('div');
     imageDiv.className = 'article-card-image';
-    if (picture) {
-      const img = picture.querySelector('img');
-      if (img) {
-        imageDiv.style.backgroundImage = `url('${img.src}')`;
-      }
+    const img = cols[0].querySelector('img');
+    if (img && img.src && !img.src.includes('about:error')) {
+      imageDiv.style.backgroundImage = `url('${img.currentSrc || img.src}')`;
     }
 
     const contentDiv = document.createElement('div');
