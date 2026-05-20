@@ -89,12 +89,10 @@
   align-items: center;
   gap: 12px;
   background: linear-gradient(90deg, #f8f7f1 0, rgb(248 247 241 / 60%) 100%);
-  border-top-left-radius: 100px;
-  border-bottom-left-radius: 100px;
-  padding: 20px 0 20px 40px;
-  width: calc(100% - 20px);
-  align-self: flex-end;
-  margin-top: 16px;
+  border-radius: 100px 0 0 100px;
+  padding: 25px 0 25px 50px;
+  margin-top: 24px;
+  align-self: flex-start;
 }
 
 .article-header .article-header-author-name {
