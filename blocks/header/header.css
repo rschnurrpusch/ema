@@ -160,9 +160,6 @@ header .nav-brand {
   padding: 12px 0;
 }
 
-header nav .nav-brand .default-content-wrapper > p:first-child {
-  display: none;
-}
 
 header nav .nav-brand img {
   width: 200px;
