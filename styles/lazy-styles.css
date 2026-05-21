@@ -1,1 +1,175 @@
-/* add global styles that can be loaded post LCP here */
+/* testimonial section (patient story hero with background image) */
+main .section.testimonial {
+  position: relative;
+  min-height: auto;
+  margin: 40px 0;
+  padding: 0;
+}
+
+main .section.testimonial > .default-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 32px 24px;
+  max-width: 100%;
+}
+
+main .section.testimonial h3 {
+  font-size: 40px;
+  font-weight: 400;
+  color: var(--text-color);
+  margin: 0 0 4px;
+}
+
+main .section.testimonial h1 {
+  font-size: 38px;
+  font-weight: 800;
+  color: var(--text-color);
+  margin: 0 0 4px;
+}
+
+main .section.testimonial h5 {
+  font-size: 27px;
+  font-weight: 400;
+  color: var(--text-color);
+  margin: 0 0 16px;
+}
+
+main .section.testimonial p {
+  margin: 0;
+}
+
+main .section.testimonial a:any-link {
+  display: inline-block;
+  font-family: var(--body-font-family);
+  font-size: 20px;
+  font-weight: 500;
+  color: #fff;
+  background-color: #00293b;
+  border-radius: 32px;
+  padding: 14px 24px;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: normal;
+}
+
+main .section.testimonial a:hover {
+  background-color: var(--text-color);
+}
+
+@media (width >= 768px) {
+  main .section.testimonial > .default-content-wrapper {
+    padding: 86px 43px 94px;
+  }
+}
+
+@media (width >= 1024px) {
+  main .section.testimonial {
+    background: url('/images/connie-story.jpg') center / cover no-repeat;
+    min-height: 400px;
+  }
+
+  main .section.testimonial > .default-content-wrapper {
+    padding: 86px 60% 94px 43px;
+    min-height: 400px;
+  }
+}
+
+@media (width >= 1280px) {
+  main .section.testimonial > .default-content-wrapper {
+    padding: 86px 55% 94px 121px;
+  }
+}
+
+/* page disclaimer */
+main > .section:last-of-type {
+  padding-bottom: 40px;
+}
+
+/* Story form section — blue background edge to edge */
+main > .section:has(.form.story) {
+  background-color: rgb(23 140 202);
+}
+
+main > .section:has(.form.story) > div {
+  max-width: 1440px;
+}
+
+/* Share Your Story privacy notice paragraph */
+main .hero-patient-container + .section > .default-content-wrapper > p {
+  font-family: var(--body-font-family);
+  font-size: 20px;
+  font-weight: 400;
+  font-style: italic;
+  color: #8c8c8c;
+  line-height: 32px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+main .hero-patient-container + .section > .default-content-wrapper > p a {
+  color: rgb(23 140 202);
+  text-decoration: none;
+}
+
+/* Article body styles — applies to sections following article-header */
+main .article-header-container ~ .section:not(.cards-resource-container) > .default-content-wrapper {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+main .article-header-container ~ .section > .default-content-wrapper:has(.cards-resource) {
+  max-width: none;
+}
+
+main .article-header-container ~ .section > .default-content-wrapper:has(.cards-resource) h3 {
+  font-family: var(--display-font-family);
+  font-size: 40px;
+  font-weight: 400;
+  color: var(--text-color);
+  text-align: center;
+  margin: 0 0 24px;
+}
+
+.article-header-container ~ .section:not(.cards-resource-container) > .default-content-wrapper h2 {
+  font-family: var(--display-font-family);
+  font-size: 40px;
+  font-weight: 400;
+  color: var(--text-color);
+  line-height: 45px;
+  margin: 0 0 24px;
+}
+
+.article-header-container ~ .section:not(.cards-resource-container) > .default-content-wrapper p {
+  font-family: var(--body-font-family);
+  font-size: 18px;
+  line-height: 1.5;
+  color: #8c8c8c;
+  margin: 0 0 20px;
+}
+
+.article-header-container ~ .section:not(.cards-resource-container) > .default-content-wrapper a:any-link {
+  display: inline-block;
+  font-family: var(--body-font-family);
+  font-size: 12px;
+  font-weight: 400;
+  color: #fff;
+  background-color: #00293b;
+  padding: 14px 24px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin: 16px 0;
+}
+
+.article-header-container ~ .section:not(.cards-resource-container) > .default-content-wrapper a:hover {
+  background-color: var(--text-color);
+}
+
+@media (width >= 900px) {
+  .article-header-container ~ .section:not(.cards-resource-container) > .default-content-wrapper p {
+    font-size: 20px;
+    line-height: 1.25;
+  }
+}

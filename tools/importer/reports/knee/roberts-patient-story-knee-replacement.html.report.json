@@ -1,0 +1,8 @@
+{
+  "status": "failed",
+  "url": "https://www.thereadypatient.com/knee/roberts-patient-story-knee-replacement.html",
+  "path": "knee/roberts-patient-story-knee-replacement.html",
+  "timestamp": "2026-05-18T23:44:24.220Z",
+  "error": "page.evaluate: TypeError: Cannot redefine property: src\n    at Object.defineProperties (<anonymous>)\n    at document.createElement (https://cdn.cookielaw.org/consent/68e28a3c-297e-46e5-87e1-5ffdeac9b5dd/OtAutoBlock.js:10:312)\n    at eval (eval at evaluate (:290:30), <anonymous>:6:33)\n    at UtilityScript.evaluate (<anonymous>:292:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+  "errorStack": "page.evaluate: TypeError: Cannot redefine property: src\n    at Object.defineProperties (<anonymous>)\n    at document.createElement (https://cdn.cookielaw.org/consent/68e28a3c-297e-46e5-87e1-5ffdeac9b5dd/OtAutoBlock.js:10:312)\n    at eval (eval at evaluate (:290:30), <anonymous>:6:33)\n    at UtilityScript.evaluate (<anonymous>:292:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at processUrl (/home/node/.excat-marketplace/excat/skills/excat-content-import/scripts/run-bulk-import.js:429:16)\n    at async main (/home/node/.excat-marketplace/excat/skills/excat-content-import/scripts/run-bulk-import.js:599:22)"
+}

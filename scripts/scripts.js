@@ -22,13 +22,22 @@ function buildHeroBlock(main) {
   // eslint-disable-next-line no-bitwise
   if (h1 && picture && (h1.compareDocumentPosition(picture) & Node.DOCUMENT_POSITION_PRECEDING)) {
     // Check if h1 or picture is already inside a hero block
-    if (h1.closest('.hero') || picture.closest('.hero')) {
+    if (h1.closest('.hero, [class^="hero-"]') || picture.closest('.hero, [class^="hero-"]')) {
       return; // Don't create a duplicate hero block
     }
     const section = document.createElement('div');
     section.append(buildBlock('hero', { elems: [picture, h1] }));
     main.prepend(section);
   }
+}
+
+function buildBreadcrumb(main) {
+  if (main !== document.querySelector('main')) return;
+  const path = window.location.pathname.replace(/\/$/, '');
+  if (!path || path === '' || path === '/index') return;
+  const section = document.createElement('div');
+  section.append(buildBlock('breadcrumb', { elems: [] }));
+  main.prepend(section);
 }
 
 /**
@@ -58,7 +67,9 @@ function buildAutoBlocks(main) {
           try {
             const { pathname } = new URL(fragment.href);
             const frag = await loadFragment(pathname);
-            fragment.parentElement.replaceWith(...frag.children);
+            if (frag) {
+              fragment.parentElement.replaceWith(...frag.children);
+            }
           } catch (error) {
             // eslint-disable-next-line no-console
             console.error('Fragment loading failed', error);
@@ -68,6 +79,7 @@ function buildAutoBlocks(main) {
     }
 
     buildHeroBlock(main);
+    buildBreadcrumb(main);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
@@ -113,6 +125,24 @@ function decorateButtons(main) {
   });
 }
 
+function decorateTestimonialSections(main) {
+  main.querySelectorAll('.section').forEach((section) => {
+    const h1 = section.querySelector('h1');
+    const h3 = section.querySelector('h3');
+    const h5 = section.querySelector('h5');
+    if (h1 && h3 && h5 && section.querySelector('a[href*="patient-story"]')) {
+      const headerSection = document.createElement('div');
+      headerSection.className = 'section';
+      const wrapper = document.createElement('div');
+      wrapper.className = 'default-content-wrapper';
+      wrapper.append(h3);
+      headerSection.append(wrapper);
+      section.before(headerSection);
+      section.classList.add('testimonial');
+    }
+  });
+}
+
 /**
  * Decorates the main element.
  * @param {Element} main The main element
@@ -122,6 +152,7 @@ export function decorateMain(main) {
   decorateIcons(main);
   buildAutoBlocks(main);
   decorateSections(main);
+  decorateTestimonialSections(main);
   decorateBlocks(main);
   decorateButtons(main);
 }

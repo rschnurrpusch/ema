@@ -1,0 +1,40 @@
+{
+  "variantName": "cards-resource",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-05-11T17:28:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.thereadypatient.com/",
+    "originPage": "ReadyPatient homepage - resource and category cards",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "resource-navigation",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image + heading + description + CTA",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "resource navigation cards with images",
+      "category selection grids",
+      "promotional cards with CTAs",
+      "healthcare content category pages"
+    ],
+    "notSuitableFor": [
+      "text-only card layouts without images",
+      "icon-based feature grids",
+      "dense data-heavy card displays"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-11T17:28:00.000Z"
+  }
+}

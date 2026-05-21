@@ -1,0 +1,172 @@
+.article-header {
+  padding: 32px 0;
+}
+
+.article-header .article-header-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+
+.article-header .article-header-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px 24px 24px 0;
+}
+
+.article-header .article-header-tag {
+  display: inline-block;
+  padding: 6px 8px;
+  border-radius: 12px;
+  font-family: var(--body-font-family);
+  font-size: 10px;
+  font-weight: 400;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  line-height: 12.5px;
+  background-color: rgb(23 140 202);
+  margin-bottom: 16px;
+  align-self: flex-start;
+}
+
+.article-header .tagcolor-surgery {
+  background-color: rgb(23 140 202);
+}
+
+.article-header .tagcolor-recovery {
+  background-color: rgb(60 164 128);
+}
+
+.article-header .tagcolor-lifestyle {
+  background-color: rgb(83 142 159);
+}
+
+.article-header .tagcolor-physical {
+  background-color: rgb(85 57 88);
+}
+
+.article-header .tagcolor-well-being {
+  background-color: rgb(83 142 159);
+}
+
+.article-header .tagcolor-diagnosis-and-options {
+  background-color: rgb(86 124 124);
+}
+
+.article-header .tagcolor-healthy-living {
+  background-color: rgb(18 82 153);
+}
+
+.article-header h1 {
+  font-family: var(--display-font-family);
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--text-color);
+  line-height: 1.13;
+  margin: 0 0 24px;
+}
+
+.article-header .article-header-description {
+  font-family: var(--body-font-family);
+  font-size: 18px;
+  color: #8c8c8c;
+  line-height: 1.25;
+  margin: 0 0 20px;
+}
+
+.article-header .article-header-meta {
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  color: #8c8c8c;
+  margin: 0 0 16px;
+}
+
+.article-header .article-header-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(90deg, #f8f7f1 0, rgb(248 247 241 / 60%) 100%);
+  border-radius: 100px 0 0 100px;
+  padding: 25px 0 25px 50px;
+  margin-top: 24px;
+  align-self: flex-start;
+}
+
+.article-header .article-header-author-name {
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  font-weight: 400;
+  color: #8c8c8c;
+  display: block;
+}
+
+.article-header .article-header-author-role {
+  font-family: var(--body-font-family);
+  font-size: 10px;
+  color: var(--text-color);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  display: block;
+}
+
+.article-header .article-header-author-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #e8e7e2;
+  flex-shrink: 0;
+}
+
+.article-header .article-header-author-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* Hero image — circular crop */
+.article-header .article-header-image {
+  border-radius: 1000px;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  max-width: 300px;
+  align-self: center;
+}
+
+.article-header .article-header-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Desktop — two column layout */
+@media (width >= 900px) {
+  .article-header .article-header-content {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .article-header .article-header-text {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .article-header h1 {
+    font-size: 32px;
+    line-height: 36px;
+  }
+
+  .article-header .article-header-description {
+    font-size: 20px;
+  }
+
+  .article-header .article-header-image {
+    flex: 0 0 45%;
+    max-width: 500px;
+    order: 1;
+  }
+}

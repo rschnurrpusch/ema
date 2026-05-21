@@ -24,17 +24,11 @@ function closeOnEscape(e) {
 
 function closeOnFocusLost(e) {
   const nav = e.currentTarget;
-  if (!nav.contains(e.relatedTarget)) {
+  if (!nav.contains(e.relatedTarget) && isDesktop.matches) {
     const navSections = nav.querySelector('.nav-sections');
     if (!navSections) return;
-    const navSectionExpanded = navSections.querySelector('[aria-expanded="true"]');
-    if (navSectionExpanded && isDesktop.matches) {
-      // eslint-disable-next-line no-use-before-define
-      toggleAllNavSections(navSections, false);
-    } else if (!isDesktop.matches) {
-      // eslint-disable-next-line no-use-before-define
-      toggleMenu(nav, navSections, false);
-    }
+    // eslint-disable-next-line no-use-before-define
+    toggleAllNavSections(navSections, false);
   }
 }
 
@@ -76,7 +70,7 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
   const button = nav.querySelector('.nav-hamburger button');
   document.body.style.overflowY = (expanded || isDesktop.matches) ? '' : 'hidden';
   nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-  toggleAllNavSections(navSections, expanded || isDesktop.matches ? 'false' : 'true');
+  toggleAllNavSections(navSections, 'false');
   button.setAttribute('aria-label', expanded ? 'Open navigation' : 'Close navigation');
   // enable nav dropdown keyboard accessibility
   if (navSections) {
@@ -125,8 +119,9 @@ export default async function decorate(block) {
   while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
 
   const classes = ['brand', 'sections', 'tools'];
+  const navSectionDivs = nav.querySelectorAll(':scope > .section');
   classes.forEach((c, i) => {
-    const section = nav.children[i];
+    const section = navSectionDivs[i];
     if (section) section.classList.add(`nav-${c}`);
   });
 
@@ -137,12 +132,37 @@ export default async function decorate(block) {
     brandLink.closest('.button-container').className = '';
   }
 
+  const brandLinkEl = navBrand.querySelector('a');
+  const brandPicture = navBrand.querySelector('picture');
+  if (brandLinkEl && brandPicture) {
+    const img = document.createElement('img');
+    img.src = '/icons/logo.svg';
+    img.alt = 'ReadyPatient - Brought to you by Zimmer Biomet';
+    brandLinkEl.textContent = '';
+    brandLinkEl.append(img);
+    brandPicture.closest('p')?.remove();
+    const emptyP = navBrand.querySelector('p:empty');
+    if (emptyP) emptyP.remove();
+  }
+
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {
     navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
       if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
-      navSection.addEventListener('click', () => {
+      navSection.addEventListener('mouseenter', () => {
         if (isDesktop.matches) {
+          toggleAllNavSections(navSections);
+          navSection.setAttribute('aria-expanded', 'true');
+        }
+      });
+      navSection.addEventListener('mouseleave', () => {
+        if (isDesktop.matches) {
+          navSection.setAttribute('aria-expanded', 'false');
+        }
+      });
+      navSection.addEventListener('click', (e) => {
+        if (!isDesktop.matches) {
+          e.stopPropagation();
           const expanded = navSection.getAttribute('aria-expanded') === 'true';
           toggleAllNavSections(navSections);
           navSection.setAttribute('aria-expanded', expanded ? 'false' : 'true');
@@ -164,8 +184,46 @@ export default async function decorate(block) {
   toggleMenu(nav, navSections, isDesktop.matches);
   isDesktop.addEventListener('change', () => toggleMenu(nav, navSections, isDesktop.matches));
 
+  // search
+  const search = document.createElement('div');
+  search.classList.add('nav-search');
+  search.innerHTML = `<button type="button" aria-label="Search" class="nav-search-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    </button>
+    <form class="nav-search-form" action="/search" method="get">
+      <input type="search" name="q" placeholder="Search" aria-label="Search">
+    </form>`;
+  const searchInput = search.querySelector('input');
+  const openSearch = () => search.classList.add('nav-search-open');
+  const closeSearch = () => search.classList.remove('nav-search-open');
+
+  search.addEventListener('mouseenter', () => {
+    if (isDesktop.matches) openSearch();
+  });
+  search.addEventListener('mouseleave', () => {
+    if (isDesktop.matches && document.activeElement !== searchInput) closeSearch();
+  });
+  searchInput.addEventListener('blur', () => closeSearch());
+  nav.querySelector('.nav-sections').after(search);
+
   const navWrapper = document.createElement('div');
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
   block.append(navWrapper);
+
+  // sticky shadow on scroll
+  const header = block.closest('header');
+  if (header) {
+    const sentinel = document.createElement('div');
+    sentinel.className = 'header-sentinel';
+    sentinel.style.height = '1px';
+    sentinel.style.marginBottom = '-1px';
+    header.before(sentinel);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        header.classList.toggle('header-scrolled', !entry.isIntersecting);
+      },
+    );
+    observer.observe(sentinel);
+  }
 }
