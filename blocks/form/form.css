@@ -1,5 +1,6 @@
 .form {
   padding: 0;
+  overflow: hidden;
 }
 
 .form .form-content {
@@ -152,8 +153,8 @@
 .form .form-row:has(.form-heading),
 .form .form-row:has(.form-heading) ~ .form-row {
   background-color: rgb(23 140 202);
-  padding: 24px calc(50vw - 50%);
-  margin: 0 calc(50% - 50vw);
+  padding: 24px 9999px;
+  margin: 0 -9999px;
 }
 
 .form .form-row:has(.form-heading) ~ .form-row .form-label {
