@@ -334,7 +334,7 @@ main img {
 
 /* sections */
 main > .section {
-  padding: 24px 0;
+  padding: 0;
 }
 
 /* Default: white bg on main for most pages */
@@ -360,8 +360,7 @@ main > .section > div {
 }
 
 main > .section > div > * {
-  padding-left: 24px;
-  padding-right: 24px;
+  padding: 24px;
   max-width: 1392px;
   margin-left: auto;
   margin-right: auto;
@@ -371,6 +370,7 @@ main > .section > div > * {
 main > .section:first-of-type {
   padding-top: 0;
 }
+
 
 main:has(.article-header-container) > .section:last-of-type {
   margin-bottom: 0;
