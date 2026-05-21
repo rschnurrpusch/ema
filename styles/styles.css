@@ -112,7 +112,13 @@ header {
   overflow: visible;
   z-index: 2;
   position: sticky;
-  top: -40px;
+  top: 0;
+}
+
+@media (width >= 900px) {
+  header {
+    top: -40px;
+  }
 }
 
 header .header,
