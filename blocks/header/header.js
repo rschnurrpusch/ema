@@ -132,17 +132,17 @@ export default async function decorate(block) {
     brandLink.closest('.button-container').className = '';
   }
 
-  const brandImg = navBrand.querySelector('img');
-  if (brandImg) {
-    brandImg.src = '/icons/logo.svg';
-    const brandLinkEl = navBrand.querySelector('a');
-    const brandPicture = navBrand.querySelector('picture');
-    if (brandLinkEl && brandPicture && !brandLinkEl.contains(brandPicture)) {
-      brandLinkEl.textContent = '';
-      brandLinkEl.append(brandPicture);
-      const emptyP = navBrand.querySelector('p:empty');
-      if (emptyP) emptyP.remove();
-    }
+  const brandLinkEl = navBrand.querySelector('a');
+  const brandPicture = navBrand.querySelector('picture');
+  if (brandLinkEl && brandPicture) {
+    const img = document.createElement('img');
+    img.src = '/icons/logo.svg';
+    img.alt = 'ReadyPatient - Brought to you by Zimmer Biomet';
+    brandLinkEl.textContent = '';
+    brandLinkEl.append(img);
+    brandPicture.closest('p')?.remove();
+    const emptyP = navBrand.querySelector('p:empty');
+    if (emptyP) emptyP.remove();
   }
 
   const navSections = nav.querySelector('.nav-sections');

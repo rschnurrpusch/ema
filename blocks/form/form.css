@@ -111,9 +111,9 @@
 }
 
 .form .form-submit {
-  display: block;
-  width: 100%;
-  padding: 16px 24px;
+  display: inline-block;
+  width: auto;
+  padding: 14px 24px;
   background-color: #00293b;
   color: #fff;
   border: none;
