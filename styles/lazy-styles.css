@@ -87,6 +87,15 @@ main > .section:last-of-type {
   padding-bottom: 40px;
 }
 
+/* Story form section — blue background edge to edge */
+main > .section:has(.form.story) {
+  background-color: rgb(23 140 202);
+}
+
+main > .section:has(.form.story) > div {
+  max-width: 1440px;
+}
+
 /* Share Your Story privacy notice paragraph */
 main .hero-patient-container + .section > .default-content-wrapper > p {
   font-family: var(--body-font-family);

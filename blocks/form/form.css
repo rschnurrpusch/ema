@@ -1,6 +1,5 @@
 .form {
   padding: 0;
-  overflow: hidden;
 }
 
 .form .form-content {
@@ -132,8 +131,8 @@
   background-color: var(--text-color);
 }
 
-/* Story section — blue background panel overrides */
-.form .form-heading {
+/* Story section — blue background variant */
+.form.story .form-heading {
   font-family: var(--display-font-family);
   font-size: 48px;
   font-weight: 400;
@@ -142,7 +141,7 @@
   margin: 0 0 50px;
 }
 
-.form .form-description {
+.form.story .form-description {
   font-family: var(--body-font-family);
   font-size: 20px;
   color: #fff;
@@ -150,26 +149,19 @@
   margin: 0 0 50px;
 }
 
-.form .form-row:has(.form-heading),
-.form .form-row:has(.form-heading) ~ .form-row {
-  background-color: rgb(23 140 202);
-  padding: 24px 9999px;
-  margin: 0 -9999px;
-}
-
-.form .form-row:has(.form-heading) ~ .form-row .form-label {
+.form.story .form-label {
   color: #fff;
 }
 
-.form .form-row:has(.form-heading) ~ .form-row .form-disclaimer {
+.form.story .form-disclaimer {
   color: #fff;
 }
 
-.form .form-row:has(.form-heading) ~ .form-row .form-disclaimer a {
+.form.story .form-disclaimer a {
   color: #fff;
 }
 
-.form .form-row:has(.form-heading) ~ .form-row .form-submit {
+.form.story .form-submit {
   background-color: #00293b;
   color: #fff;
   border: none;
