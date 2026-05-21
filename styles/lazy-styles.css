@@ -87,6 +87,23 @@ main > .section:last-of-type {
   padding-bottom: 40px;
 }
 
+/* Share Your Story privacy notice paragraph */
+main .hero-patient-container + .section > .default-content-wrapper > p {
+  font-family: var(--body-font-family);
+  font-size: 20px;
+  font-weight: 400;
+  font-style: italic;
+  color: #8c8c8c;
+  line-height: 32px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+main .hero-patient-container + .section > .default-content-wrapper > p a {
+  color: rgb(23 140 202);
+  text-decoration: none;
+}
+
 /* Article body styles — applies to sections following article-header */
 main .article-header-container ~ .section:not(.cards-resource-container) > .default-content-wrapper {
   max-width: 680px;
