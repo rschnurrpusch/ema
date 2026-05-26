@@ -103,6 +103,7 @@ footer {
   margin-right: auto;
 }
 
+
 header,
 footer {
   background-color: #fff;
@@ -346,6 +347,8 @@ main > .section {
 /* Default: white bg on main for most pages */
 main {
   background-color: #fff;
+  margin-top: 38px;
+  margin-bottom: 16px;
 }
 
 /* Article detail pages: transparent main, white on individual sections */
