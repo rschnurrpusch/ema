@@ -1,3 +1,8 @@
+.cards-resource {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
 /* shared card grid */
 .cards-resource > ul {
   list-style: none;

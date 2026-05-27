@@ -4,6 +4,7 @@
 }
 
 .hero-patient {
+  padding: 0;
   position: relative;
   min-height: 400px;
   display: flex;
@@ -41,7 +42,7 @@
   width: 100%;
   max-width: 1392px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 40px;
   box-sizing: content-box;
 }
 

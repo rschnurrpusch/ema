@@ -378,7 +378,7 @@ main > .section > div {
 }
 
 main > .section > div > * {
-  padding: 24px;
+  padding: 24px 40px;
   max-width: 1392px;
   margin-left: auto;
   margin-right: auto;
