@@ -99,8 +99,17 @@ header,
 main,
 footer {
   max-width: 1392px;
-  margin-left: 24px;
-  margin-right: 24px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+@media (width >= 768px) {
+  header,
+  main,
+  footer {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
 }
 
 @media (width >= 1440px) {
