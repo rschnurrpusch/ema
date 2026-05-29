@@ -429,7 +429,7 @@ header nav .nav-search {
     grid-area: search;
     position: relative;
     margin-left: 8px;
-    padding-right: 40px;
+    margin-right: 40px;
     width: 24px;
     transition: width 0.5s ease;
   }
